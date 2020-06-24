@@ -1,6 +1,87 @@
+      /*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+.hamburger {
+    padding: 15px 15px;
+    display: inline-block;
+    cursor: pointer;
+    transition-property: opacity, filter;
+    transition-duration: 0.15s;
+    transition-timing-function: linear;
+    font: inherit;
+    color: inherit;
+    text-transform: none;
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    overflow: visible; }
+    .hamburger:hover {
+      opacity: 0.7; }
+    .hamburger.is-active:hover {
+      opacity: 0.7; }
+    .hamburger.is-active .hamburger-inner,
+    .hamburger.is-active .hamburger-inner::before,
+    .hamburger.is-active .hamburger-inner::after {
+      background-color: #000; }
+  
+  .hamburger-box {
+    width: 40px;
+    height: 24px;
+    display: inline-block;
+    position: relative; }
+  
+  .hamburger-inner {
+    display: block;
+    top: 50%;
+    margin-top: -2px; }
+    .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+      width: 40px;
+      height: 4px;
+      background-color: #000;
+      border-radius: 4px;
+      position: absolute;
+      transition-property: transform;
+      transition-duration: 0.15s;
+      transition-timing-function: ease; }
+    .hamburger-inner::before, .hamburger-inner::after {
+      content: "";
+      display: block; }
+    .hamburger-inner::before {
+      top: -10px; }
+    .hamburger-inner::after {
+      bottom: -10px; }
+
+      /*
+   * Elastic
+   */
+   .hamburger--elastic .hamburger-inner {
+    top: 2px;
+    transition-duration: 0.275s;
+    transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+    .hamburger--elastic .hamburger-inner::before {
+      top: 10px;
+      transition: opacity 0.125s 0.275s ease; }
+    .hamburger--elastic .hamburger-inner::after {
+      top: 20px;
+      transition: transform 0.275s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+  
+  .hamburger--elastic.is-active .hamburger-inner {
+    transform: translate3d(0, 10px, 0) rotate(135deg);
+    transition-delay: 0.075s; }
+    .hamburger--elastic.is-active .hamburger-inner::before {
+      transition-delay: 0s;
+      opacity: 0; }
+    .hamburger--elastic.is-active .hamburger-inner::after {
+      transform: translate3d(0, -20px, 0) rotate(-270deg);
+      transition-delay: 0.075s; }
+
 body {
-    margin: 
-    0px;
+    margin: 0px;
+
 }
 
 .navigation {
@@ -8,13 +89,23 @@ body {
     vertical-align: top;
     width: 100%;
     padding: 1%;
-    background-color: lightblue;
+    background-color: #1B4255;
+    color: white;
 }
+
+.nav {
+    align-items: right;
+    justify-content: space-evenly;
+}
+
+/* .inline-block {
+    
+} */
 
 .logo {
     width: 23%;
     padding: 1%;
-    text-align: center;
+    text-align: left;
 }
 
 ul {
@@ -44,4 +135,167 @@ footer {
     background-color: #373738;
     text-align: center;
     width: 100%;
+}
+
+.flexContainer { 
+    display: flex;
+    /* gap: 10px; */
+    margin-left: 50px;
+    margin-right: 50px;
+    /* flex-direction: column; */
+    background-color: lightblue;
+}
+
+.skillTypes {
+margin: 40px;
+padding: 20px;
+background-color: white;
+}
+
+.skillTypes p{
+    background-color: lightblue;
+}
+
+.skillTypes h3{
+    font-size: 30px;
+    text-align: center;
+    align-self: space-evenly;
+    width: 30%;
+    height: 70px;
+    background-color: lightblue;
+}
+
+
+ *{
+    outline: 1px solid red;
+}
+
+/* .myWork img {
+    width: 80%;
+} */
+
+.workGrid {
+    display: grid;
+    grid-template-columns: auto auto auto ;
+    grid-template-rows: auto;
+    /* grid-gap: 10px; */
+    column-gap: 10px;
+    background-color: #1B4255;
+    padding: 10px;
+    grid-template-areas: 
+    /* "image1 image1 image1 image2 image2 image2 image3 image3 image3"
+    "header1 header1 header1 header2 header2 header2 header3 header3 header3"
+    "content1 content1 content1 content2 content2 content2 content3 content3 content3"
+    ". . cta1 . . cta2 . . cta3;  */
+    
+    "image1 image2 image3"
+    "header1 header2 header3"
+    "text1 text2 text3"
+  }
+
+  .workGridItem {
+    background-color: #ADD8E6;
+    /* border: 1px solid rgba(0, 0, 0, 0.8); */
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+  }
+
+#image1 {
+      grid-area: image1;
+}
+#image2 {
+    grid-area: image2;
+}
+#image3 {
+    grid-area: image3;
+}
+#header1 {
+    grid-area: header1;
+}
+#header2 {
+    grid-area: header2;
+}
+#header3 {
+    grid-area: header3;
+}
+#text1 {
+    grid-area: text1;
+    grid-template-columns: auto auto;
+    grid-template-areas: "content1 cta1";
+}
+#text2 {
+    grid-area: text2;
+}
+
+#text3 {
+    grid-area: text3;
+}
+
+#content1 {
+    grid-area: content1;
+}
+#content2 {
+    grid-area: content2;
+}
+#content3 {
+    grid-area: content3;
+}
+#cta1 {
+    grid-area: cta1;
+}
+#cta2 {
+    grid-area: cta2;
+}
+#cta3 {
+    grid-area: cta3;
+}
+
+/* @media only screen and (max-width: 600px) {
+    .flexContainer {
+         flex-direction: column;
+    } */
+
+@media only screen and (max-width: 1000px) {
+    .flexContainer {
+         flex-direction: column;
+    }
+
+    /* .skillTypes {
+        width: 100%;
+    } */
+
+    .workGrid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto;
+        /* grid-gap: 10px; */
+        /* column-gap: 10px; */
+        background-color: #1B4255;
+        padding: 10px;
+        grid-template-areas:        
+        "image1" "header1" "text1" 
+        "image2" "header2" "text2"
+        "image3" "header3" "text3"
+      }
+}
+
+@media only screen and (max-width: 600px) {
+    .flexContainer {
+         flex-direction: column;
+    }
+
+    .workGrid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto;
+        /* grid-gap: 10px; */
+        /* column-gap: 10px; */
+        background-color: #1B4255;
+        padding: 10px;
+        grid-template-areas:        
+        "image1" "header1" "text1" 
+        "image2" "header2" "text2"
+        "image3" "header3" "text3"
+      }
 }
