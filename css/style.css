@@ -80,8 +80,7 @@
       transition-delay: 0.075s; }
 
 body {
-    margin: 0px;
-
+    margin: 10px;
 }
 
 .navigation {
@@ -166,9 +165,9 @@ background-color: white;
 }
 
 
- *{
+ /* *{
     outline: 1px solid red;
-}
+} */
 
 /* .myWork img {
     width: 80%;
